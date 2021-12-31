@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/zoha/storigo/config"
-	"github.com/zoha/storigo/routes/index"
+	rootRouter "github.com/zoha/storigo/routes/root"
 )
 
 func main() {
@@ -17,8 +17,8 @@ func main() {
 func initHttpServer() {
 	gin.SetMode(config.Get(config.GIN_MODE))
 	server := gin.Default()
-	IndexGroup := server.Group("/")
-	index.IndexInit(IndexGroup)
+	index := server.Group("/")
+	rootRouter.RootRouterInit(index)
 
 	server.Run(config.Get(config.APP_HOST_AND_PORT))
 }
