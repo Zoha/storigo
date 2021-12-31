@@ -11,7 +11,12 @@ const envFilePath = ".env"
 
 // config keys
 const (
+	// general configs
 	APP_NAME string = "APP_NAME"
+
+	// server configs
+	APP_HOST_AND_PORT string = "APP_HOST_AND_PORT"
+	GIN_MODE          string = "GIN_MODE"
 )
 
 // load configs
