@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/zoha/storigo/common/config"
+)
 
 func main() {
-	fmt.Println("Hello storigo")
+	// read the dot env configs
+	config.ReadConfigs()
+
+	fmt.Printf("Hello %s", config.Get(config.APP_NAME))
 }
